@@ -55,3 +55,13 @@ const draw = () => {
     }
   }
 };
+
+const main = () => {
+  updateGeneration();
+  // جای جمعیت الان رو با نسل جدید عوض میکنیم
+  [current_population, next_population] = [next_population, current_population];
+  draw();
+  setTimeout(main, 100); // سرعت هر ایترشین رو اعمال میکنیم
+};
+initialize();
+main();
