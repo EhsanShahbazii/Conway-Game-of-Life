@@ -1,4 +1,9 @@
 # Game-Of-Life
+
+![](https://files.virgool.io/upload/users/2468585/posts/k1wbbmtedodg/e4gvnlsd6nqk.gif)
+
+![](https://files.virgool.io/upload/users/2468585/posts/k1wbbmtedodg/t3cwgumgw99j.gif)
+
 بازی زندگی معروف که یه مدلسازی از اتوماتای سلولی غیر قابل پیشبینی هست که با جاوا اسکریپت پیاده سازی شده.
 
 ### بازی زندگی یعنی چی؟
