@@ -22,3 +22,24 @@ const initialize = () => {
       current_population[y][x] = Math.floor(Math.random() * 2);
   }
 };
+
+const countCellNeighbors = (x, y) => {
+  let count = 0;
+  for (
+    let yf = -1;
+    yf <= 1;
+    yf++ // ستونی شمارش میکنیم
+  )
+    for (
+      let xf = -1;
+      xf <= 1;
+      xf++ // سطری شمارش میکنیم
+    )
+      // اگه همسایه سلول ما زنده بود یعنی 1 هست و میشماریم
+      count +=
+        current_population[(y + yf + height) % height][
+          (x + xf + width) % width
+        ];
+
+  return count - current_population[y][x]; // خود سلول رو نمیخوایم بشماریم
+};
