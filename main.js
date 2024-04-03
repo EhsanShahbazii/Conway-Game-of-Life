@@ -45,3 +45,13 @@ const updateGeneration = () => {
     }
   }
 };
+
+const draw = () => {
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      // اگه سلول مرده سیاه بشه وگرنه سفید
+      ctx.fillStyle = next_population[y][x] == 1 ? "white" : "black"; // رنگ سلول ها سفید
+      ctx.fillRect(x * cell_size, y * cell_size, cell_size, cell_size); // ساخت پیکسل سلول
+    }
+  }
+};
