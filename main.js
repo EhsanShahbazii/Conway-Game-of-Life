@@ -14,32 +14,17 @@ const initialize = () => {
     // برا هر خونه آرایه، یه آرایه دیگه ایجاد میکنیم
     current_population[y] = [];
     next_population[y] = [];
-    for (
-      let x = 0;
-      x < width;
-      x++ // مقدار 0 یا 1 به جمعیت ها میدیم
-    )
+    for (let x = 0; x < width; x++) // مقدار 0 یا 1 به جمعیت ها میدیم
       current_population[y][x] = Math.floor(Math.random() * 2);
   }
 };
 
 const countCellNeighbors = (x, y) => {
   let count = 0;
-  for (
-    let yf = -1;
-    yf <= 1;
-    yf++ // ستونی شمارش میکنیم
-  )
-    for (
-      let xf = -1;
-      xf <= 1;
-      xf++ // سطری شمارش میکنیم
-    )
+  for (let yf = -1; yf <= 1; yf++) // ستونی شمارش میکنیم
+    for (let xf = -1; xf <= 1; xf++) // سطری شمارش میکنیم
       // اگه همسایه سلول ما زنده بود یعنی 1 هست و میشماریم
-      count +=
-        current_population[(y + yf + height) % height][
-          (x + xf + width) % width
-        ];
+      count += current_population[(y + yf + height) % height][(x + xf + width) % width];
 
   return count - current_population[y][x]; // خود سلول رو نمیخوایم بشماریم
 };
