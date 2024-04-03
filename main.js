@@ -28,3 +28,20 @@ const countCellNeighbors = (x, y) => {
 
   return count - current_population[y][x]; // خود سلول رو نمیخوایم بشماریم
 };
+
+const updateGeneration = () => {
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const neighbors = countCellNeighbors(x, y); // تعداد همسایه های سلول
+      let next_state = 0; // پیشفرض حالت بعدی اینه سلول مرده
+
+      if (current_population[y][x] == 0 && neighbors == 3)
+        next_state = 1; // سلول مرده وقتی سه تا همسایه داره زنده میشه
+      else if (current_population[y][x] == 1 && (neighbors > 3 || neighbors < 2))
+        next_state = 0; // سلول زنده وقتی همسایه کمتر از 2 تا یا بیشتر از 3 تا داره میمیره
+      else next_state = current_population[y][x]; // سلول دست نخورده باقی میمونه
+
+      next_population[y][x] = next_state;
+    }
+  }
+};
