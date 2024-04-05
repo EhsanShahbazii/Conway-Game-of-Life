@@ -1,6 +1,5 @@
 # Game-Of-Life
 
-
 ![](https://files.virgool.io/upload/users/2468585/posts/k1wbbmtedodg/e4gvnlsd6nqk.gif)
 
 ![](https://files.virgool.io/upload/users/2468585/posts/k1wbbmtedodg/t3cwgumgw99j.gif)
